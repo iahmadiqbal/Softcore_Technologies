@@ -37,38 +37,44 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-heading font-bold text-lg">S</span>
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#F4B400' }}>
+            <span className="font-heading font-bold text-lg" style={{ color: '#5A2D82' }}>S</span>
           </div>
           <span className="text-gray-800 font-heading font-bold text-xl">
-            Softcore <span className="text-primary">Technologies</span>
+            Softcore <span style={{ color: '#5A2D82' }}>Technologies</span>
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          <Link to="/" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/") ? "text-primary" : "text-gray-700"}`}>
+        <nav className="hidden md:flex items-center gap-6">
+          <Link to="/" className={`text-sm font-medium transition-colors ${isActive("/") ? "text-gray-700" : "text-gray-700"}`} style={isActive("/") ? { color: '#5A2D82' } : {}}>
             Home
           </Link>
-          <Link to="/about" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/about") ? "text-primary" : "text-gray-700"}`}>
+          <Link to="/about" className={`text-sm font-medium transition-colors ${isActive("/about") ? "text-gray-700" : "text-gray-700"}`} style={isActive("/about") ? { color: '#5A2D82' } : {}}>
             About
           </Link>
           <div className="relative group" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
-            <Link to="/services" className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${isActive("/services") ? "text-primary" : "text-gray-700"}`}>
+            <Link to="/services" className={`text-sm font-medium transition-colors flex items-center gap-1 ${isActive("/services") ? "text-gray-700" : "text-gray-700"}`} style={isActive("/services") ? { color: '#5A2D82' } : {}}>
               Our Services <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
             </Link>
             <div className={`absolute top-full left-0 mt-2 w-56 bg-card rounded-lg shadow-xl border border-border overflow-hidden transition-all duration-200 ${dropdownOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"}`}>
               {services.map((s) => (
-                <Link key={s.name} to={s.path} className="block px-4 py-3 text-sm text-foreground hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Link key={s.name} to={s.path} className="block px-4 py-3 text-sm text-foreground transition-colors" style={{ '&:hover': { backgroundColor: '#5A2D82', color: 'white' } }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#5A2D82'; e.currentTarget.style.color = 'white'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = ''; }}>
                   {s.name}
                 </Link>
               ))}
             </div>
           </div>
-          <Link to="/contact" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/contact") ? "text-primary" : "text-gray-700"}`}>
+          <Link 
+            to="/contact" 
+            className="text-sm font-medium px-5 py-2 rounded-lg transition-all font-semibold"
+            style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#5A2D82'; e.currentTarget.style.color = 'white'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F4B400'; e.currentTarget.style.color = '#5A2D82'; }}
+          >
             Get in Touch
           </Link>
-          <Link to="/careers" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/careers") ? "text-primary" : "text-gray-700"}`}>
+          <Link to="/careers" className={`text-sm font-medium transition-colors ${isActive("/careers") ? "text-gray-700" : "text-gray-700"}`} style={isActive("/careers") ? { color: '#5A2D82' } : {}}>
             Join Us
           </Link>
         </nav>

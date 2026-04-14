@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 import { Button } from "@/components/ui/button";
 import { Briefcase, Clock, TrendingUp, Users, Lightbulb, Star, ArrowDown } from "lucide-react";
-import hero2 from "@/assets/hero-2.jpg";
+import aboutTeam from "@/assets/about-team.jpg";
 
 const positions = [
   {
@@ -53,18 +53,17 @@ const Careers = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-hero py-24 md:py-32 overflow-hidden">
-        <img src={hero2} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-hero/80 to-hero/40" />
+      <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundColor: '#5A2D82' }}>
+        <img src={aboutTeam} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
         <div className="relative container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-hero-foreground animate-from-top">
-            Join Our <span className="text-primary">Team</span>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-white animate-from-top">
+            Join Our <span style={{ color: '#F4B400' }}>Team</span>
           </h1>
-          <p className="mt-4 text-hero-muted max-w-2xl mx-auto animate-from-bottom" style={{ animationDelay: "200ms" }}>
+          <p className="mt-4 text-white/90 max-w-2xl mx-auto animate-from-bottom" style={{ animationDelay: "200ms" }}>
             Build your career with a team focused on innovation, growth, and real-world impact.
           </p>
           <a href="#openings" className="inline-block mt-6 animate-from-bottom" style={{ animationDelay: "400ms" }}>
-            <Button size="lg" className="text-base px-8 gap-2">View Openings <ArrowDown className="w-4 h-4" /></Button>
+            <Button size="lg" className="text-base px-8 gap-2" style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}>View Openings <ArrowDown className="w-4 h-4" /></Button>
           </a>
         </div>
       </section>
@@ -130,13 +129,13 @@ const Careers = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-hero">
+      <section className="py-20" style={{ backgroundColor: '#5A2D82' }}>
         <div className="container mx-auto px-4 text-center">
           <AnimateOnScroll direction="scale">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-hero-foreground">Didn't find a suitable role?</h2>
-            <p className="mt-4 text-hero-muted max-w-lg mx-auto">Send us your profile and we'll get in touch when the right opportunity arises.</p>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">Didn't find a suitable role?</h2>
+            <p className="mt-4 text-white/90 max-w-lg mx-auto">Send us your profile and we'll get in touch when the right opportunity arises.</p>
             <Link to="/contact" className="inline-block mt-8">
-              <Button size="lg" className="text-base px-8">Submit Your Profile</Button>
+              <Button size="lg" className="text-base px-8" style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}>Submit Your Profile</Button>
             </Link>
           </AnimateOnScroll>
         </div>

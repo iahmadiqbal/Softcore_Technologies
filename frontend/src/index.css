@@ -15,16 +15,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 25% 10%;
 
-    --primary: 213 94% 48%;
+    --primary: 280 52% 35%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 20% 94%;
-    --secondary-foreground: 220 25% 10%;
+    --secondary: 45 95% 48%;
+    --secondary-foreground: 280 52% 35%;
 
     --muted: 220 15% 94%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 213 94% 48%;
+    --accent: 280 52% 35%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -32,15 +32,15 @@
 
     --border: 220 15% 90%;
     --input: 220 15% 90%;
-    --ring: 213 94% 48%;
+    --ring: 280 52% 35%;
 
     --radius: 0.625rem;
 
-    --hero-bg: 220 25% 8%;
+    --hero-bg: 280 52% 35%;
     --hero-foreground: 0 0% 100%;
-    --hero-muted: 220 15% 70%;
+    --hero-muted: 0 0% 90%;
 
-    --section-alt: 220 20% 95%;
+    --section-alt: 280 52% 97%;
     --footer-bg: 220 25% 8%;
     --footer-foreground: 220 15% 80%;
 
@@ -59,11 +59,24 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
+    font-size: 16px;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }
 
@@ -72,22 +85,27 @@
     animation: slideFromLeft 0.8s ease-out forwards;
     opacity: 0;
   }
+
   .animate-from-right {
     animation: slideFromRight 0.8s ease-out forwards;
     opacity: 0;
   }
+
   .animate-from-top {
     animation: slideFromTop 0.8s ease-out forwards;
     opacity: 0;
   }
+
   .animate-from-bottom {
     animation: slideFromBottom 0.8s ease-out forwards;
     opacity: 0;
   }
+
   .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out forwards;
     opacity: 0;
   }
+
   .animate-scale-in {
     animation: scaleIn 0.6s ease-out forwards;
     opacity: 0;
@@ -95,31 +113,90 @@
 }
 
 @keyframes slideFromLeft {
-  from { opacity: 0; transform: translateX(-60px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
 @keyframes slideFromRight {
-  from { opacity: 0; transform: translateX(60px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
 @keyframes slideFromTop {
-  from { opacity: 0; transform: translateY(-60px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes slideFromBottom {
-  from { opacity: 0; transform: translateY(60px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
+
 @keyframes heroSlide {
-  0%, 30% { opacity: 1; }
-  33%, 97% { opacity: 0; }
-  100% { opacity: 1; }
+
+  0%,
+  30% {
+    opacity: 1;
+  }
+
+  33%,
+  97% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

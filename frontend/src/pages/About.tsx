@@ -8,14 +8,13 @@ const About = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-hero py-24 md:py-32 overflow-hidden">
-        <img src={aboutTeam} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-hero/80 to-hero/40" />
+      <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundColor: '#5A2D82' }}>
+        <img src={aboutTeam} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
         <div className="relative container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-hero-foreground animate-from-top">
-            About <span className="text-primary">Softcore Technologies</span>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-white animate-from-top">
+            About <span style={{ color: '#F4B400' }}>Softcore Technologies</span>
           </h1>
-          <p className="mt-4 text-hero-muted max-w-2xl mx-auto animate-from-bottom" style={{ animationDelay: "200ms" }}>
+          <p className="mt-4 text-white/90 max-w-2xl mx-auto animate-from-bottom" style={{ animationDelay: "200ms" }}>
             A passionate team of developers, designers, and strategists committed to delivering innovative digital solutions.
           </p>
         </div>
@@ -96,13 +95,13 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-hero">
+      <section className="py-20" style={{ backgroundColor: '#5A2D82' }}>
         <div className="container mx-auto px-4 text-center">
           <AnimateOnScroll direction="scale">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-hero-foreground">Get in Touch</h2>
-            <p className="mt-4 text-hero-muted max-w-lg mx-auto">Ready to start your next project? We'd love to hear from you.</p>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">Get in Touch</h2>
+            <p className="mt-4 text-white/90 max-w-lg mx-auto">Ready to start your next project? We'd love to hear from you.</p>
             <Link to="/contact" className="inline-block mt-8">
-              <Button size="lg" className="text-base px-8">Get in Touch</Button>
+              <Button size="lg" className="text-base px-8" style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}>Get in Touch</Button>
             </Link>
           </AnimateOnScroll>
         </div>

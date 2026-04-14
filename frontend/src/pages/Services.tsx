@@ -6,7 +6,7 @@ import serviceDesign from "@/assets/service-design.jpg";
 import serviceMobile from "@/assets/service-mobile.jpg";
 import serviceMarketing from "@/assets/service-marketing.jpg";
 import serviceCloud from "@/assets/service-cloud.jpg";
-import hero2 from "@/assets/hero-2.jpg";
+import hero1 from "@/assets/hero-1.jpg";
 
 const services = [
   {
@@ -45,18 +45,17 @@ const Services = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-hero py-24 md:py-32 overflow-hidden">
-        <img src={hero2} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-hero/80 to-hero/40" />
+      <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundColor: '#5A2D82' }}>
+        <img src={hero1} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
         <div className="relative container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-hero-foreground animate-from-top">
-            Our <span className="text-primary">Services</span>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-white animate-from-top">
+            Our <span style={{ color: '#F4B400' }}>Services</span>
           </h1>
-          <p className="mt-4 text-hero-muted max-w-2xl mx-auto animate-from-bottom" style={{ animationDelay: "200ms" }}>
+          <p className="mt-4 text-white/90 max-w-2xl mx-auto animate-from-bottom" style={{ animationDelay: "200ms" }}>
             Delivering innovative and scalable digital solutions tailored to your business.
           </p>
           <Link to="/contact" className="inline-block mt-6 animate-from-bottom" style={{ animationDelay: "400ms" }}>
-            <Button size="lg" className="text-base px-8">Get in Touch</Button>
+            <Button size="lg" className="text-base px-8" style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}>Get in Touch</Button>
           </Link>
         </div>
       </section>
@@ -89,12 +88,12 @@ const Services = () => {
       ))}
 
       {/* CTA */}
-      <section className="py-20 bg-hero">
+      <section className="py-20" style={{ backgroundColor: '#5A2D82' }}>
         <div className="container mx-auto px-4 text-center">
           <AnimateOnScroll direction="scale">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-hero-foreground">Need a customized solution for your business?</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">Need a customized solution for your business?</h2>
             <Link to="/contact" className="inline-block mt-8">
-              <Button size="lg" className="text-base px-8">Get in Touch</Button>
+              <Button size="lg" className="text-base px-8" style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}>Get in Touch</Button>
             </Link>
           </AnimateOnScroll>
         </div>

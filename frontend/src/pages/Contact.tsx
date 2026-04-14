@@ -20,14 +20,13 @@ const Contact = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-hero py-24 md:py-32 overflow-hidden">
-        <img src={hero1} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-hero/80 to-hero/40" />
+      <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundColor: '#5A2D82' }}>
+        <img src={hero1} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
         <div className="relative container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-hero-foreground animate-from-top">
-            Get in <span className="text-primary">Touch</span>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-white animate-from-top">
+            Get in <span style={{ color: '#F4B400' }}>Touch</span>
           </h1>
-          <p className="mt-4 text-hero-muted max-w-2xl mx-auto animate-from-bottom" style={{ animationDelay: "200ms" }}>
+          <p className="mt-4 text-white/90 max-w-2xl mx-auto animate-from-bottom" style={{ animationDelay: "200ms" }}>
             Have a project in mind? Let's discuss how we can help you.
           </p>
         </div>
@@ -116,13 +115,13 @@ const Contact = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-hero">
+      <section className="py-16" style={{ backgroundColor: '#5A2D82' }}>
         <div className="container mx-auto px-4 text-center">
           <AnimateOnScroll direction="scale">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-hero-foreground">Need immediate assistance?</h2>
+            <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">Need immediate assistance?</h2>
             <div className="flex flex-wrap gap-4 justify-center mt-6">
               <a href="tel:4038363512">
-                <Button size="lg" className="text-base gap-2"><Phone className="w-4 h-4" /> Call Now</Button>
+                <Button size="lg" className="text-base gap-2" style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}><Phone className="w-4 h-4" /> Call Now</Button>
               </a>
               <a href="mailto:info@softcoretechnologies.com">
                 <Button size="lg" variant="outline" className="text-base gap-2 bg-white text-gray-800 border-white hover:bg-gray-100"><Mail className="w-4 h-4" /> Email Us</Button>

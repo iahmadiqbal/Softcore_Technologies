@@ -4,29 +4,11 @@ import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram, Heart } fr
 export const Footer = () => {
   return (
     <footer className="bg-slate-900 text-slate-300">
-      {/* Contact Strip */}
-      <div className="bg-slate-800">
-        <div className="container mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-slate-200">
-          <div className="flex items-center gap-3 justify-center md:justify-start">
-            <MapPin className="w-5 h-5 shrink-0" />
-            <span className="text-sm">Softcore Technologies, Main Office</span>
-          </div>
-          <div className="flex items-center gap-3 justify-center">
-            <Phone className="w-5 h-5 shrink-0" />
-            <span className="text-sm">403-836-3512</span>
-          </div>
-          <div className="flex items-center gap-3 justify-center md:justify-end">
-            <Mail className="w-5 h-5 shrink-0" />
-            <span className="text-sm">info@softcoretechnologies.com</span>
-          </div>
-        </div>
-      </div>
-
       <div className="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold">S</span>
+            <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#F4B400' }}>
+              <span className="font-heading font-bold" style={{ color: '#5A2D82' }}>S</span>
             </div>
             <span className="font-heading font-bold text-white text-lg">Softcore</span>
           </div>
@@ -38,42 +20,42 @@ export const Footer = () => {
         <div>
           <h4 className="font-heading font-semibold text-white mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
-            <li><Link to="/about" className="hover:text-primary transition-colors">About</Link></li>
-            <li><Link to="/contact" className="hover:text-primary transition-colors">Get in Touch</Link></li>
-            <li><Link to="/careers" className="hover:text-primary transition-colors">Join Us</Link></li>
+            <li><Link to="/" className="hover:text-white transition-colors" style={{ '&:hover': { color: '#5A2D82' } }} onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Home</Link></li>
+            <li><Link to="/about" className="hover:text-white transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>About</Link></li>
+            <li><Link to="/contact" className="hover:text-white transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Get in Touch</Link></li>
+            <li><Link to="/careers" className="hover:text-white transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Join Us</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-heading font-semibold text-white mb-4">Services</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/services#web-development" className="hover:text-primary transition-colors">Web Development</Link></li>
-            <li><Link to="/services#graphic-design" className="hover:text-primary transition-colors">Graphic Designing</Link></li>
-            <li><Link to="/services#mobile-app" className="hover:text-primary transition-colors">Mobile Apps</Link></li>
-            <li><Link to="/services#digital-marketing" className="hover:text-primary transition-colors">Digital Marketing</Link></li>
-            <li><Link to="/services#cloud-it" className="hover:text-primary transition-colors">Cloud & IT Support</Link></li>
+            <li><Link to="/services#web-development" className="hover:text-white transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Web Development</Link></li>
+            <li><Link to="/services#graphic-design" className="hover:text-white transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Graphic Designing</Link></li>
+            <li><Link to="/services#mobile-app" className="hover:text-white transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Mobile Apps</Link></li>
+            <li><Link to="/services#digital-marketing" className="hover:text-white transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Digital Marketing</Link></li>
+            <li><Link to="/services#cloud-it" className="hover:text-white transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Cloud & IT Support</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-heading font-semibold text-white mb-4">Contact Info</h4>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary" /> Softcore Technologies, Main Office</li>
-            <li className="flex items-start gap-2"><Phone className="w-4 h-4 mt-0.5 shrink-0 text-primary" /> 403-836-3512</li>
-            <li className="flex items-start gap-2"><Mail className="w-4 h-4 mt-0.5 shrink-0 text-primary" /> info@softcoretechnologies.com</li>
+            <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0" style={{ color: '#F4B400' }} /> Softcore Technologies, Main Office</li>
+            <li className="flex items-start gap-2"><Phone className="w-4 h-4 mt-0.5 shrink-0" style={{ color: '#F4B400' }} /> 403-836-3512</li>
+            <li className="flex items-start gap-2"><Mail className="w-4 h-4 mt-0.5 shrink-0" style={{ color: '#F4B400' }} /> info@softcoretechnologies.com</li>
           </ul>
           <div className="flex gap-3 mt-4">
-            <a href="#" className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors text-primary">
+            <a href="#" className="w-9 h-9 rounded-full flex items-center justify-center transition-colors" style={{ backgroundColor: 'rgba(244, 180, 0, 0.1)', color: '#F4B400' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F4B400'; e.currentTarget.style.color = 'white'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(244, 180, 0, 0.1)'; e.currentTarget.style.color = '#F4B400'; }}>
               <Facebook className="w-4 h-4" />
             </a>
-            <a href="#" className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors text-primary">
+            <a href="#" className="w-9 h-9 rounded-full flex items-center justify-center transition-colors" style={{ backgroundColor: 'rgba(244, 180, 0, 0.1)', color: '#F4B400' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F4B400'; e.currentTarget.style.color = 'white'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(244, 180, 0, 0.1)'; e.currentTarget.style.color = '#F4B400'; }}>
               <Twitter className="w-4 h-4" />
             </a>
-            <a href="#" className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors text-primary">
+            <a href="#" className="w-9 h-9 rounded-full flex items-center justify-center transition-colors" style={{ backgroundColor: 'rgba(244, 180, 0, 0.1)', color: '#F4B400' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F4B400'; e.currentTarget.style.color = 'white'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(244, 180, 0, 0.1)'; e.currentTarget.style.color = '#F4B400'; }}>
               <Linkedin className="w-4 h-4" />
             </a>
-            <a href="#" className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors text-primary">
+            <a href="#" className="w-9 h-9 rounded-full flex items-center justify-center transition-colors" style={{ backgroundColor: 'rgba(244, 180, 0, 0.1)', color: '#F4B400' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F4B400'; e.currentTarget.style.color = 'white'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(244, 180, 0, 0.1)'; e.currentTarget.style.color = '#F4B400'; }}>
               <Instagram className="w-4 h-4" />
             </a>
           </div>
@@ -82,10 +64,10 @@ export const Footer = () => {
 
       <div className="border-t border-slate-700">
         <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between text-xs">
-          <span className="flex items-center gap-1">© {new Date().getFullYear()} Softcore Technologies. All rights reserved. Made with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> by Softcore</span>
+          <span>© {new Date().getFullYear()} Softcore Technologies. All rights reserved.</span>
           <div className="flex gap-4 mt-2 md:mt-0">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#F4B400'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>Terms of Service</a>
           </div>
         </div>
       </div>
