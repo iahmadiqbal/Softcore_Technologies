@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import hero1 from "@/assets/hero-1.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -19,8 +20,10 @@ const Contact = () => {
   return (
     <>
       {/* HERO */}
-      <section className="bg-hero py-24 md:py-32">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative bg-hero py-24 md:py-32 overflow-hidden">
+        <img src={hero1} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-hero/80 to-hero/40" />
+        <div className="relative container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-hero-foreground animate-from-top">
             Get in <span className="text-primary">Touch</span>
           </h1>
@@ -47,7 +50,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1 block">Phone Number</label>
-                  <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+92 300 1234567" />
+                  <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="403-836-3512" />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1 block">Message</label>
@@ -68,7 +71,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold">Phone Number</h3>
-                    <p className="text-muted-foreground text-sm mt-1">+92 300 1234567</p>
+                    <p className="text-muted-foreground text-sm mt-1">403-836-3512</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border">
@@ -118,11 +121,11 @@ const Contact = () => {
           <AnimateOnScroll direction="scale">
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-hero-foreground">Need immediate assistance?</h2>
             <div className="flex flex-wrap gap-4 justify-center mt-6">
-              <a href="tel:+923001234567">
+              <a href="tel:4038363512">
                 <Button size="lg" className="text-base gap-2"><Phone className="w-4 h-4" /> Call Now</Button>
               </a>
               <a href="mailto:info@softcoretechnologies.com">
-                <Button size="lg" variant="outline" className="text-base gap-2 border-hero-muted/30 text-hero-foreground hover:bg-hero-muted/10"><Mail className="w-4 h-4" /> Email Us</Button>
+                <Button size="lg" variant="outline" className="text-base gap-2 bg-white text-gray-800 border-white hover:bg-gray-100"><Mail className="w-4 h-4" /> Email Us</Button>
               </a>
             </div>
           </AnimateOnScroll>

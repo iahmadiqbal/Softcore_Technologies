@@ -21,18 +21,18 @@ const services = [
 ];
 
 const whyUs = [
-  "Experienced Team",
-  "Reliable Delivery",
-  "Custom Solutions",
-  "Modern Technologies",
-  "Client-Focused Approach",
+  { icon: Users, title: "Experienced Team", desc: "Skilled professionals with years of industry expertise" },
+  { icon: CheckCircle, title: "Reliable Delivery", desc: "On-time project completion with quality assurance" },
+  { icon: Lightbulb, title: "Custom Solutions", desc: "Tailored approaches designed for your unique needs" },
+  { icon: Code2, title: "Modern Technologies", desc: "Latest tools and frameworks for cutting-edge solutions" },
+  { icon: Rocket, title: "Client-Focused Approach", desc: "Your success is our priority, always" },
 ];
 
 const steps = [
-  { icon: ClipboardList, title: "Requirement", step: "01" },
-  { icon: Lightbulb, title: "Planning", step: "02" },
-  { icon: Code2, title: "Development", step: "03" },
-  { icon: Rocket, title: "Delivery", step: "04" },
+  { icon: ClipboardList, title: "Requirement", step: "01", desc: "Understanding your vision and project goals" },
+  { icon: Lightbulb, title: "Planning", step: "02", desc: "Strategic roadmap and technical architecture" },
+  { icon: Code2, title: "Development", step: "03", desc: "Building with modern tools and best practices" },
+  { icon: Rocket, title: "Delivery", step: "04", desc: "Launch, support, and continuous improvement" },
 ];
 
 const Index = () => {
@@ -56,14 +56,14 @@ const Index = () => {
           </div>
         ))}
         <div className="absolute inset-0 bg-gradient-to-r from-hero/80 to-hero/40" />
-        <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-hero-foreground leading-tight animate-from-left">
+        <div className="relative container mx-auto px-4 h-full flex items-center justify-center">
+          <div className="max-w-3xl text-center">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold text-hero-foreground leading-tight animate-from-top">
               {slides[currentSlide].heading.split(" ").map((word, i) =>
                 i === 2 ? <span key={i} className="text-primary">{word} </span> : word + " "
               )}
             </h1>
-            <p className="mt-6 text-lg text-hero-muted max-w-xl animate-from-bottom" style={{ animationDelay: "200ms" }}>
+            <p className="mt-6 text-lg text-hero-muted mx-auto animate-from-bottom" style={{ animationDelay: "200ms" }}>
               {slides[currentSlide].sub}
             </p>
             <Link to="/contact" className="inline-block mt-8 animate-from-bottom" style={{ animationDelay: "400ms" }}>
@@ -137,14 +137,18 @@ const Index = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <AnimateOnScroll direction="top">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Why <span className="text-primary">Choose Us</span></h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4">Why <span className="text-primary">Choose Us</span></h2>
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">We combine expertise, innovation, and dedication to deliver exceptional results for your business</p>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {whyUs.map((item, i) => (
-              <AnimateOnScroll key={item} direction="bottom" delay={i * 100}>
-                <div className="flex flex-col items-center text-center p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors">
-                  <CheckCircle className="w-10 h-10 text-primary mb-3" />
-                  <span className="font-heading font-medium">{item}</span>
+              <AnimateOnScroll key={item.title} direction="bottom" delay={i * 100}>
+                <div className="flex flex-col items-center text-center p-6 rounded-xl bg-gradient-to-br from-card to-card/50 border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                    <item.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <span className="font-heading font-semibold text-lg mb-2">{item.title}</span>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               </AnimateOnScroll>
             ))}
@@ -156,17 +160,19 @@ const Index = () => {
       <section className="py-20 bg-section-alt">
         <div className="container mx-auto px-4">
           <AnimateOnScroll direction="top">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">How We <span className="text-primary">Work</span></h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4">How We <span className="text-primary">Work</span></h2>
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">Our proven process ensures smooth project execution from concept to completion</p>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((s, i) => (
               <AnimateOnScroll key={s.title} direction={i % 2 === 0 ? "left" : "right"} delay={i * 150}>
-                <div className="relative text-center">
+                <div className="relative text-center bg-card rounded-xl p-6 border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <s.icon className="w-9 h-9 text-primary" />
                   </div>
-                  <span className="absolute top-0 right-1/2 translate-x-12 -translate-y-2 text-4xl font-heading font-bold text-primary/20">{s.step}</span>
-                  <h3 className="font-heading font-semibold text-lg">{s.title}</h3>
+                  <span className="absolute top-4 right-4 text-5xl font-heading font-bold text-primary/10">{s.step}</span>
+                  <h3 className="font-heading font-semibold text-xl mb-2">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground">{s.desc}</p>
                 </div>
               </AnimateOnScroll>
             ))}

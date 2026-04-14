@@ -8,8 +8,10 @@ const About = () => {
   return (
     <>
       {/* HERO */}
-      <section className="bg-hero py-24 md:py-32">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative bg-hero py-24 md:py-32 overflow-hidden">
+        <img src={aboutTeam} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-hero/80 to-hero/40" />
+        <div className="relative container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-hero-foreground animate-from-top">
             About <span className="text-primary">Softcore Technologies</span>
           </h1>
