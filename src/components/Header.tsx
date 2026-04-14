@@ -1,0 +1,107 @@
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { ChevronDown, Menu, X } from "lucide-react";
+
+const services = [
+  { name: "Web Development", path: "/services#web-development" },
+  { name: "Graphic Designing", path: "/services#graphic-design" },
+  { name: "Mobile App Development", path: "/services#mobile-app" },
+  { name: "Digital Marketing & SEO", path: "/services#digital-marketing" },
+  { name: "Cloud & IT Support", path: "/services#cloud-it" },
+];
+
+export const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setDropdownOpen(false);
+  }, [location]);
+
+  const isActive = (path: string) => location.pathname === path;
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-hero/95 backdrop-blur-md shadow-lg" : "bg-hero"
+      }`}
+    >
+      <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
+        <Link to="/" className="flex items-center gap-2">
+          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+            <span className="text-primary-foreground font-heading font-bold text-lg">S</span>
+          </div>
+          <span className="text-hero-foreground font-heading font-bold text-xl">
+            Softcore <span className="text-primary">Technologies</span>
+          </span>
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          <Link to="/" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/") ? "text-primary" : "text-hero-foreground"}`}>
+            Home
+          </Link>
+          <Link to="/about" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/about") ? "text-primary" : "text-hero-foreground"}`}>
+            About
+          </Link>
+          <div className="relative group" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
+            <Link to="/services" className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${isActive("/services") ? "text-primary" : "text-hero-foreground"}`}>
+              Our Services <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
+            </Link>
+            <div className={`absolute top-full left-0 mt-2 w-56 bg-card rounded-lg shadow-xl border border-border overflow-hidden transition-all duration-200 ${dropdownOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"}`}>
+              {services.map((s) => (
+                <Link key={s.name} to={s.path} className="block px-4 py-3 text-sm text-foreground hover:bg-primary hover:text-primary-foreground transition-colors">
+                  {s.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <Link to="/contact" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/contact") ? "text-primary" : "text-hero-foreground"}`}>
+            Get in Touch
+          </Link>
+          <Link to="/careers" className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/careers") ? "text-primary" : "text-hero-foreground"}`}>
+            Join Us
+          </Link>
+        </nav>
+
+        {/* Mobile Toggle */}
+        <button className="md:hidden text-hero-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Nav */}
+      {mobileOpen && (
+        <div className="md:hidden bg-hero border-t border-hero-muted/20">
+          <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
+            <Link to="/" className="text-hero-foreground hover:text-primary py-2">Home</Link>
+            <Link to="/about" className="text-hero-foreground hover:text-primary py-2">About</Link>
+            <div>
+              <button onClick={() => setDropdownOpen(!dropdownOpen)} className="text-hero-foreground hover:text-primary py-2 flex items-center gap-1 w-full">
+                Our Services <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
+              </button>
+              {dropdownOpen && (
+                <div className="pl-4 flex flex-col gap-2 mt-1">
+                  {services.map((s) => (
+                    <Link key={s.name} to={s.path} className="text-hero-muted hover:text-primary text-sm py-1">{s.name}</Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            <Link to="/contact" className="text-hero-foreground hover:text-primary py-2">Get in Touch</Link>
+            <Link to="/careers" className="text-hero-foreground hover:text-primary py-2">Join Us</Link>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+};
