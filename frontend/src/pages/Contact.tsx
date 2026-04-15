@@ -121,7 +121,7 @@ const Contact = () => {
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">Need immediate assistance?</h2>
             <div className="flex flex-wrap gap-4 justify-center mt-6">
               <a href="tel:+14034777967">
-                <Button size="lg" className="text-base gap-2" style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}><Phone className="w-4 h-4" /> Call Now: +1 403-477-7967</Button>
+                <Button size="lg" className="text-base gap-2" style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}><Phone className="w-4 h-4" /> Call Now</Button>
               </a>
               <a href="mailto:info@softcoretechnologies.com">
                 <Button size="lg" variant="outline" className="text-base gap-2 bg-white text-gray-800 border-white hover:bg-gray-100"><Mail className="w-4 h-4" /> Email Us</Button>
