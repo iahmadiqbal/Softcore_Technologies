@@ -41,19 +41,19 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label className="text-sm font-medium mb-1 block">Full Name</label>
-                  <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your full name" required />
+                  <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="" required />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1 block">Email Address</label>
-                  <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="your@email.com" required />
+                  <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="" required />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1 block">Phone Number</label>
-                  <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="403-836-3512" />
+                  <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="" />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1 block">Message</label>
-                  <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your project..." rows={5} required />
+                  <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="" rows={5} required />
                 </div>
                 <Button type="submit" size="lg" className="w-full text-base">Send Message</Button>
               </form>
@@ -64,31 +64,31 @@ const Contact = () => {
             <div>
               <h2 className="text-2xl font-heading font-bold mb-6">Contact Information</h2>
               <div className="space-y-6">
-                <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
+                <div className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4" style={{ borderLeftColor: '#5A2D82' }}>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: '#5A2D82' }}>
+                    <Phone className="w-6 h-6" style={{ color: '#F4B400' }} />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold">Phone Number</h3>
-                    <p className="text-muted-foreground text-sm mt-1">403-836-3512</p>
+                    <h3 className="font-heading font-semibold text-lg" style={{ color: '#5A2D82' }}>Phone Number</h3>
+                    <p className="text-gray-600 mt-1">+1 403-477-7967</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
+                <div className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4" style={{ borderLeftColor: '#5A2D82' }}>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: '#5A2D82' }}>
+                    <Mail className="w-6 h-6" style={{ color: '#F4B400' }} />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold">Email Address</h3>
-                    <p className="text-muted-foreground text-sm mt-1">info@softcoretechnologies.com</p>
+                    <h3 className="font-heading font-semibold text-lg" style={{ color: '#5A2D82' }}>Email Address</h3>
+                    <p className="text-gray-600 mt-1">info@softcoretechnologies.com</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-5 bg-card rounded-xl border border-border">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-primary" />
+                <div className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4" style={{ borderLeftColor: '#5A2D82' }}>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: '#5A2D82' }}>
+                    <MapPin className="w-6 h-6" style={{ color: '#F4B400' }} />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold">Office Location</h3>
-                    <p className="text-muted-foreground text-sm mt-1">Softcore Technologies, Main Office</p>
+                    <h3 className="font-heading font-semibold text-lg" style={{ color: '#5A2D82' }}>Office Location</h3>
+                    <p className="text-gray-600 mt-1">Suite 200 - 1212 - 1st SE, Calgary AB T2G 2H8, 4629 3rd Avenue Edson, Calgary, Alberta T7E 1C2, Canada</p>
                   </div>
                 </div>
               </div>
@@ -102,13 +102,13 @@ const Contact = () => {
         <AnimateOnScroll direction="bottom">
           <div className="h-[400px] w-full bg-muted flex items-center justify-center">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.0!2d67.0!3d24.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU0JzAwLjAiTiA2N8KwMDAnMDAuMCJF!5e0!3m2!1sen!2s!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.8!2d-114.0719!3d51.0447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53716f7c07d6b7e5%3A0x1!2s1212%201%20St%20SE%2C%20Calgary%2C%20AB%20T2G%202H8!5e0!3m2!1sen!2sca!4v1"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              title="Office Location"
+              title="Office Location - Suite 200, 1212 1st SE, Calgary AB"
             />
           </div>
         </AnimateOnScroll>
@@ -120,8 +120,8 @@ const Contact = () => {
           <AnimateOnScroll direction="scale">
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">Need immediate assistance?</h2>
             <div className="flex flex-wrap gap-4 justify-center mt-6">
-              <a href="tel:4038363512">
-                <Button size="lg" className="text-base gap-2" style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}><Phone className="w-4 h-4" /> Call Now</Button>
+              <a href="tel:+14034777967">
+                <Button size="lg" className="text-base gap-2" style={{ backgroundColor: '#F4B400', color: '#5A2D82' }}><Phone className="w-4 h-4" /> Call Now: +1 403-477-7967</Button>
               </a>
               <a href="mailto:info@softcoretechnologies.com">
                 <Button size="lg" variant="outline" className="text-base gap-2 bg-white text-gray-800 border-white hover:bg-gray-100"><Mail className="w-4 h-4" /> Email Us</Button>
