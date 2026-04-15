@@ -1,52 +1,51 @@
 import { Link } from "react-router-dom";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
 import { Button } from "@/components/ui/button";
-import { Briefcase, Clock, TrendingUp, Users, Lightbulb, Star, ArrowDown } from "lucide-react";
+import { Briefcase, Clock, TrendingUp, Users, Lightbulb, Star, ArrowDown, Globe, Server, Palette, Coffee } from "lucide-react";
 import aboutTeam from "@/assets/about-team.jpg";
 
 const positions = [
   {
-    category: "Web Developer Openings",
-    jobs: [
-      {
-        title: "Web Developer",
-        type: "Full-Time",
-        desc: "We are looking for a skilled Web Developer to join our team. You will be responsible for building and maintaining modern web applications using React, Node.js, and related technologies. The ideal candidate has experience with responsive design, REST APIs, and a passion for clean, efficient code.",
-      },
-      {
-        title: "Web Developer",
-        type: "Internship / Part-Time",
-        desc: "An exciting opportunity for aspiring developers to gain real-world experience. You'll work alongside senior developers, contribute to live projects, learn modern development practices, and build your portfolio with meaningful work that makes an impact.",
-      },
-    ],
+    title: "Node.js Developer",
+    type: "Full-Time",
+    icon: Server,
+    desc: "Join our backend team as a Node.js Developer. You'll design and implement scalable server-side applications, build RESTful APIs, and work with databases like MongoDB and PostgreSQL. Strong knowledge of Express.js, asynchronous programming, and microservices architecture is required.",
   },
   {
-    category: "Graphic Designer Openings",
-    jobs: [
-      {
-        title: "Graphic Designer",
-        type: "Full-Time",
-        desc: "We're seeking a creative Graphic Designer with expertise in branding, UI/UX design, and marketing materials. You'll collaborate with our team to create visually compelling designs that effectively communicate our clients' messages and enhance their brand identity.",
-      },
-      {
-        title: "Graphic Designer",
-        type: "Internship",
-        desc: "Join our creative team as a design intern and develop your skills in a professional environment. You'll assist with branding projects, social media graphics, and UI design while learning industry-standard tools and workflows from experienced designers.",
-      },
-      {
-        title: "Junior Graphic Designer",
-        type: "Full-Time",
-        desc: "A great entry-level position for designers looking to grow. You'll handle day-to-day design tasks including social media content, presentations, and basic branding work. Strong skills in Adobe Creative Suite and an eye for detail are essential.",
-      },
-    ],
+    title: "Graphic Designer",
+    type: "Full-Time",
+    icon: Palette,
+    desc: "We're seeking a talented Graphic Designer to create stunning visual content for web and print. You'll design brand identities, marketing materials, social media graphics, and UI elements. Proficiency in Adobe Creative Suite (Photoshop, Illustrator, InDesign), strong typography skills, and a portfolio showcasing creative work are required.",
+  },
+  {
+    title: "Junior Java Developer",
+    type: "Full-Time",
+    icon: Coffee,
+    desc: "An excellent opportunity for Java developers starting their career. You'll work on enterprise applications, learn Spring Boot framework, participate in code reviews, and contribute to building robust backend systems. Basic understanding of OOP, SQL, and version control is essential.",
   },
 ];
 
 const whyJoin = [
-  { icon: TrendingUp, title: "Growth Opportunities" },
-  { icon: Users, title: "Collaborative Environment" },
-  { icon: Star, title: "Real Projects Experience" },
-  { icon: Lightbulb, title: "Skill Development" },
+  { 
+    icon: TrendingUp, 
+    title: "Growth Opportunities",
+    desc: "Advance your career with continuous learning, mentorship programs, and clear promotion paths."
+  },
+  { 
+    icon: Users, 
+    title: "Collaborative Environment",
+    desc: "Work with talented professionals in a supportive team culture that values your ideas and contributions."
+  },
+  { 
+    icon: Star, 
+    title: "Real Projects Experience",
+    desc: "Gain hands-on experience working on live client projects that make a real impact in the industry."
+  },
+  { 
+    icon: Lightbulb, 
+    title: "Skill Development",
+    desc: "Access to training resources, workshops, and the latest technologies to enhance your expertise."
+  },
 ];
 
 const Careers = () => {
@@ -71,39 +70,35 @@ const Careers = () => {
       {/* OPEN POSITIONS */}
       <section id="openings" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          {positions.map((cat, ci) => (
-            <div key={cat.category} className="mb-16 last:mb-0">
-              <AnimateOnScroll direction="top">
-                <h2 className="text-2xl font-heading font-bold mb-8">{cat.category}</h2>
-              </AnimateOnScroll>
-              <div className="grid gap-6">
-                {cat.jobs.map((job, ji) => (
-                  <AnimateOnScroll key={`${ci}-${ji}`} direction={ji % 2 === 0 ? "left" : "right"} delay={ji * 100}>
-                    <div className="bg-card rounded-xl p-6 border border-border shadow-md hover:shadow-lg transition-shadow">
-                      <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                            <Briefcase className="w-5 h-5 text-primary" />
-                          </div>
-                          <div>
-                            <h3 className="font-heading font-semibold text-lg">{job.title}</h3>
-                            <div className="flex items-center gap-2 text-sm text-muted-foreground mt-0.5">
-                              <Clock className="w-3.5 h-3.5" />
-                              <span>{job.type}</span>
-                            </div>
-                          </div>
-                        </div>
-                        <Link to="/contact">
-                          <Button size="sm">Join Us</Button>
-                        </Link>
+          <AnimateOnScroll direction="top">
+            <h2 className="text-2xl font-heading font-bold mb-8">Current Openings</h2>
+          </AnimateOnScroll>
+          <div className="grid gap-6">
+            {positions.map((job, ji) => (
+              <AnimateOnScroll key={ji} direction={ji % 2 === 0 ? "left" : "right"} delay={ji * 100}>
+                <div className="bg-card rounded-xl p-6 border border-border shadow-md hover:shadow-lg transition-shadow">
+                  <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <job.icon className="w-5 h-5 text-primary" />
                       </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{job.desc}</p>
+                      <div>
+                        <h3 className="font-heading font-semibold text-lg">{job.title}</h3>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground mt-0.5">
+                          <Clock className="w-3.5 h-3.5" />
+                          <span>{job.type}</span>
+                        </div>
+                      </div>
                     </div>
-                  </AnimateOnScroll>
-                ))}
-              </div>
-            </div>
-          ))}
+                    <Link to="/contact">
+                      <Button size="sm">Join Us</Button>
+                    </Link>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{job.desc}</p>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -120,7 +115,8 @@ const Careers = () => {
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <item.icon className="w-7 h-7 text-primary" />
                   </div>
-                  <h3 className="font-heading font-semibold">{item.title}</h3>
+                  <h3 className="font-heading font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               </AnimateOnScroll>
             ))}

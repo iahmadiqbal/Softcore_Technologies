@@ -3,14 +3,14 @@ import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram, Heart } fr
 
 export const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer style={{ backgroundColor: '#1a1a2e' }} className="text-slate-300">
       <div className="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <div className="mb-4">
             <img 
               src="/softcoretechnology.png" 
               alt="Softcore Technologies" 
-              className="h-32 w-auto object-contain"
+              className="h-40 w-auto object-contain"
             />
           </div>
           <p className="text-sm leading-relaxed">
