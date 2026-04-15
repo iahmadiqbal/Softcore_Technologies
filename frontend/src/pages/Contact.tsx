@@ -87,8 +87,17 @@ const Contact = () => {
                     <MapPin className="w-6 h-6" style={{ color: '#F4B400' }} />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold text-lg" style={{ color: '#5A2D82' }}>Office Location</h3>
-                    <p className="text-gray-600 mt-1">Suite 200 - 1212 - 1st SE, Calgary AB T2G 2H8, 4629 3rd Avenue Edson, Calgary, Alberta T7E 1C2, Canada</p>
+                    <h3 className="font-heading font-semibold text-lg" style={{ color: '#5A2D82' }}>Calgary Office</h3>
+                    <p className="text-gray-600 mt-1">Suite 200 - 1212 - 1st SE, Calgary AB T2G 2H8</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4" style={{ borderLeftColor: '#5A2D82' }}>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: '#5A2D82' }}>
+                    <MapPin className="w-6 h-6" style={{ color: '#F4B400' }} />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-semibold text-lg" style={{ color: '#5A2D82' }}>Edson Office</h3>
+                    <p className="text-gray-600 mt-1">4629 3rd Avenue Edson, Alberta T7E 1C2, Canada</p>
                   </div>
                 </div>
               </div>
@@ -108,7 +117,7 @@ const Contact = () => {
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              title="Office Location - Suite 200, 1212 1st SE, Calgary AB"
+              title="Calgary Office - Suite 200, 1212 1st SE, Calgary AB T2G 2H8"
             />
           </div>
         </AnimateOnScroll>

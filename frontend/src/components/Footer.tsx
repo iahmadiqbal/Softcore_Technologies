@@ -44,7 +44,17 @@ export const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0" style={{ color: '#F4B400' }} /> 
-              Suite 200 - 1212 - 1st SE, Calgary AB T2G 2H8, 4629 3rd Avenue Edson, Calgary, Alberta T7E 1C2, Canada
+              <div>
+                <div className="font-semibold text-white">Calgary Office:</div>
+                Suite 200 - 1212 - 1st SE, Calgary AB T2G 2H8
+              </div>
+            </li>
+            <li className="flex items-start gap-2">
+              <MapPin className="w-4 h-4 mt-0.5 shrink-0" style={{ color: '#F4B400' }} /> 
+              <div>
+                <div className="font-semibold text-white">Edson Office:</div>
+                4629 3rd Avenue Edson, Alberta T7E 1C2, Canada
+              </div>
             </li>
             <li className="flex items-start gap-2">
               <Phone className="w-4 h-4 mt-0.5 shrink-0" style={{ color: '#F4B400' }} /> 
