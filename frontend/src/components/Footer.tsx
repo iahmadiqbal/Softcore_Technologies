@@ -69,9 +69,6 @@ export const Footer = () => {
             <a href="https://x.com/technologi43645" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center transition-colors" style={{ backgroundColor: 'rgba(244, 180, 0, 0.1)', color: '#F4B400' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F4B400'; e.currentTarget.style.color = 'white'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(244, 180, 0, 0.1)'; e.currentTarget.style.color = '#F4B400'; }}>
               <Twitter className="w-4 h-4" />
             </a>
-            <a href="#" className="w-9 h-9 rounded-full flex items-center justify-center transition-colors" style={{ backgroundColor: 'rgba(244, 180, 0, 0.1)', color: '#F4B400' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F4B400'; e.currentTarget.style.color = 'white'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(244, 180, 0, 0.1)'; e.currentTarget.style.color = '#F4B400'; }}>
-              <Linkedin className="w-4 h-4" />
-            </a>
             <a href="https://www.instagram.com/soft_coretechnologies/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center transition-colors" style={{ backgroundColor: 'rgba(244, 180, 0, 0.1)', color: '#F4B400' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#F4B400'; e.currentTarget.style.color = 'white'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(244, 180, 0, 0.1)'; e.currentTarget.style.color = '#F4B400'; }}>
               <Instagram className="w-4 h-4" />
             </a>
