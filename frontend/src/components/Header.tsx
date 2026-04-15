@@ -37,12 +37,11 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#F4B400' }}>
-            <span className="font-heading font-bold text-lg" style={{ color: '#5A2D82' }}>S</span>
-          </div>
-          <span className="text-gray-800 font-heading font-bold text-xl">
-            Softcore <span style={{ color: '#5A2D82' }}>Technologies</span>
-          </span>
+          <img 
+            src="/softcoretechnology.png" 
+            alt="Softcore Technologies" 
+            className="h-24 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
