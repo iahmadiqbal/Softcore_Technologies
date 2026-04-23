@@ -35,8 +35,9 @@ const Contact = () => {
       });
 
       toast({
-        title: "Message Sent!",
+        title: "✅ Message Sent Successfully!",
         description: "Thank you for reaching out. We'll get back to you soon.",
+        duration: 5000,
       });
 
       // Reset form
@@ -44,9 +45,11 @@ const Contact = () => {
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
+        title: "❌ Error",
+        description:
+          "Failed to send message. Please try again or contact us directly.",
         variant: "destructive",
+        duration: 5000,
       });
     } finally {
       setIsSubmitting(false);
@@ -89,18 +92,18 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label className="text-sm font-medium mb-1 block">
-                    Full Name
+                    Full Name <span className="text-red-500">*</span>
                   </label>
                   <Input
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder=""
+                    placeholder="Enter your full name"
                     required
                   />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1 block">
-                    Email Address
+                    Email Address <span className="text-red-500">*</span>
                   </label>
                   <Input
                     type="email"
@@ -108,32 +111,38 @@ const Contact = () => {
                     onChange={(e) =>
                       setForm({ ...form, email: e.target.value })
                     }
-                    placeholder=""
+                    placeholder="your.email@example.com"
                     required
                   />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1 block">
-                    Phone Number
+                    Phone Number <span className="text-red-500">*</span>
                   </label>
                   <Input
+                    type="tel"
                     value={form.phone}
-                    onChange={(e) =>
-                      setForm({ ...form, phone: e.target.value })
-                    }
-                    placeholder=""
+                    onChange={(e) => {
+                      // Only allow numbers, spaces, +, -, and ()
+                      const value = e.target.value.replace(/[^\d\s+()-]/g, "");
+                      setForm({ ...form, phone: value });
+                    }}
+                    placeholder="+1 (403) 477-7967"
+                    pattern="[\d\s+()-]+"
+                    minLength={10}
+                    required
                   />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1 block">
-                    Message
+                    Message <span className="text-red-500">*</span>
                   </label>
                   <Textarea
                     value={form.message}
                     onChange={(e) =>
                       setForm({ ...form, message: e.target.value })
                     }
-                    placeholder=""
+                    placeholder="Tell us about your project or inquiry..."
                     rows={5}
                     required
                   />
